@@ -1,0 +1,47 @@
+CREATE SCHEMA tienda_abarrotes;
+
+USE tienda_abarrotes;
+
+CREATE TABLE Productos(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+CREATE TABLE clientes(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+CREATE TABLE proveedores(id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id));
+
+-- productos
+
+ALTER TABLE productos ADD COLUMN nombre VARCHAR(120) NOT NULL;
+
+ALTER TABLE productos ADD COLUMN precio int NOT NULL  ;
+
+ALTER TABLE productos ADD COLUMN categoria VARCHAR(120) NOT NULL;
+
+ALTER TABLE productos ADD COLUMN fecha_de_surtido DATE NOT NULL;
+
+-- CLIENTES
+
+ALTER TABLE clientes ADD COLUMN nombre VARCHAR(120) NOT NULL;
+
+ALTER TABLE clientes ADD COLUMN limite_credito INT NOT NULL;
+
+ALTER TABLE clientes ADD COLUMN mayorista VARCHAR(120) NULL ;
+
+ALTER TABLE clientes ADD COLUMN tiene_credito VARCHAR(120)  NULL;
+
+ALTER TABLE clientes ADD COLUMN fecha_credito DATE NULL AFTER id;
+
+-- PROVEEDORES
+
+ALTER TABLE proveedores ADD COLUMN nombre VARCHAR(120) NOT NULL;
+
+ALTER TABLE proveedores ADD COLUMN pedidos INT NOT NULL;
+
+ALTER TABLE proveedores ADD COLUMN calidad VARCHAR(120) NULL ;
+
+ALTER TABLE proveedores ADD COLUMN a_pagar INT NULL;
+
+ALTER TABLE proveedores ADD COLUMN fecha_entrega DATE NULL AFTER id;
+
+
+
+
